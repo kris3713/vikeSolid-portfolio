@@ -1,6 +1,7 @@
-import styles from './Link.module.css'
 import { createMemo } from 'solid-js';
 import { usePageContext } from 'vike-solid/usePageContext';
+
+import styles from './Link.module.css';
 
 export default function Link(props: { href: string; children: string }) {
   const href = () => props.href;
