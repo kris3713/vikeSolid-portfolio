@@ -1,32 +1,45 @@
-# SolidStart
+Generated with [vike.dev/new](https://vike.dev/new) ([version 622](https://www.npmjs.com/package/create-vike/v/0.0.622)) using this command:
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
-
-## Creating a project
-
-```bash
-# create a new project in the current directory
-npm init solid@latest
-
-# create a new project in my-app
-npm init solid@latest my-app
+```sh
+bun create vike@latest --solid --tailwindcss --prettier --oxlint
 ```
 
-## Developing
+## Contents
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+- [Vike](#vike)
+  - [Plus files](#plus-files)
+  - [Routing](#routing)
+  - [SSR](#ssr)
+  - [HTML Streaming](#html-streaming)
 
-```bash
-npm run dev
+## Vike
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+This app is ready to start. It's powered by [Vike](https://vike.dev) and [SolidJS](https://www.solidjs.com/guides/getting-started).
 
-## Building
+### Plus files
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
+[The + files are the interface](https://vike.dev/config) between Vike and your code.
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+- [`+config.ts`](https://vike.dev/settings) — Settings (e.g. `<title>`)
+- [`+Page.tsx`](https://vike.dev/Page) — The `<Page>` component
+- [`+data.ts`](https://vike.dev/data) — Fetching data (for your `<Page>` component)
+- [`+Layout.tsx`](https://vike.dev/Layout) — The `<Layout>` component (wraps your `<Page>` components)
+- [`+Head.tsx`](https://vike.dev/Head) - Sets `<head>` tags
+- [`/pages/_error/+Page.tsx`](https://vike.dev/error-page) — The error page (rendered when an error occurs)
+- [`+onPageTransitionStart.ts`](https://vike.dev/onPageTransitionStart) and `+onPageTransitionEnd.ts` — For page transition animations
 
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
+### Routing
+
+[Vike's built-in router](https://vike.dev/routing) lets you choose between:
+
+- [Filesystem Routing](https://vike.dev/filesystem-routing) (the URL of a page is determined based on where its `+Page.jsx` file is located on the filesystem)
+- [Route Strings](https://vike.dev/route-string)
+- [Route Functions](https://vike.dev/route-function)
+
+### SSR
+
+SSR is enabled by default. You can [disable it](https://vike.dev/ssr) for all or specific pages.
+
+### HTML Streaming
+
+You can [enable/disable HTML streaming](https://vike.dev/stream) for all or specific pages.

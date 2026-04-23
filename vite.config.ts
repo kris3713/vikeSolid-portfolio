@@ -1,12 +1,9 @@
-import { defineConfig } from "vite";
-import { nitroV2Plugin as nitro } from "@solidjs/vite-plugin-nitro-2";
-import { solidStart } from "@solidjs/start/config";
-import tailwindcss from "@tailwindcss/vite";
+import tailwindcss from '@tailwindcss/vite';
+import vikeSolid from 'vike-solid/vite';
+/// <reference types="@batijs/core/types" />
+import vike from 'vike/plugin';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
-  plugins: [
-    solidStart(),
-    tailwindcss(),
-    nitro()
-  ]
+  plugins: [vike(), vikeSolid(), tailwindcss()]
 });
