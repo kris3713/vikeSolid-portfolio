@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/npm/oxfmt/configuration_schema.json",
+  "useTabs": false,
+  "sortImports": true,
+  "embeddedLanguageFormatting": "auto",
+  "tabWidth": 2,
+  "printWidth": 80,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "singleAttributePerLine": false,
+  "jsdoc": true,
+  "objectWrap": "preserve",
+  "quoteProps": "as-needed",
+  "trailingComma": "none",
+  "semi": true,
+  "arrowParens": "avoid",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "ignorePatterns": []
+}
