@@ -1,3 +1,4 @@
+import styles from './Link.module.css'
 import { createMemo } from 'solid-js';
 import { usePageContext } from 'vike-solid/usePageContext';
 
@@ -11,7 +12,7 @@ export default function Link(props: { href: string; children: string }) {
   );
 
   return (
-    <a href={href()} class={isActive() ? 'is-active' : undefined}>
+    <a href={href()} class={isActive() ? styles.isActive : ''}>
       {props.children}
     </a>
   );

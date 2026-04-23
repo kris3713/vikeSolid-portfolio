@@ -1,5 +1,6 @@
 // https://vike.dev/Layout
 
+import 'solid-devtools';
 import './Layout.css';
 import './tailwind.css';
 import type { JSX } from 'solid-js';
@@ -9,18 +10,19 @@ import Link from '../components/Link';
 
 type props = { children?: JSX.Element };
 
-const Layout = (props: props) => (
-  <div class={'flex max-w-5xl m-auto'}>
-    <Sidebar>
-      <Logo />
-      <Link href='/'>Welcome</Link>
-      <Link href='/todo'>Todo</Link>
-      <Link href='/star-wars'>Data Fetching</Link>
-    </Sidebar>
-    <Content>{props.children}</Content>
-  </div>
-);
-export default Layout;
+export default function Layout(props: props) {
+  return (
+    <div class='flex max-w-5xl m-auto'>
+      <Sidebar>
+        <Logo />
+        <Link href='./'>Welcome</Link>
+        <Link href='./todo'>Todo</Link>
+        <Link href='./star-wars'>Data Fetching</Link>
+      </Sidebar>
+      <Content>{props.children}</Content>
+    </div>
+  );
+}
 
 const Sidebar = (props: props) => (
   <div
@@ -31,17 +33,16 @@ const Sidebar = (props: props) => (
   </div>
 );
 
-
 const Content = (props: props) => (
   <div id='page-container'>
-    <div id='page-content' class={'p-5 pb-12 min-h-screen'}>
+    <div id='page-content' class='p-5 pb-12 min-h-screen'>
       {props.children}
     </div>
   </div>
 );
 
 const Logo = () => (
-  <div class={'p-5 mb-2'}>
+  <div class='p-5 mb-2'>
     <a href='/'>
       <img src={logo} height={64} width={64} alt='logo' />
     </a>
