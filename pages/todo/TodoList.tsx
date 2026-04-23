@@ -11,7 +11,9 @@ export function TodoList() {
   return (
     <>
       <ul>
-        <For each={todoItems()}>{todoItem => <li>{todoItem.text}</li>}</For>
+        <For each={todoItems()}>
+          {todoItem => <li>{todoItem.text}</li>}
+        </For>
       </ul>
       <div>
         <form
