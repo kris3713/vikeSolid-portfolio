@@ -14,5 +14,8 @@ export default defineConfig({
     vike(),
     vikeSolid(),
     tailwindcss()
-  ]
+  ],
+  server: {
+    hmr: true
+  }
 });

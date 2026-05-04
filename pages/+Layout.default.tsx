@@ -24,6 +24,15 @@ export default function Layout(props: props) {
   );
 }
 
+const Topbar = (props: props) => (
+  <div
+    id='topbar'
+    class='p-5 flex flex-row shrink-0 border-r-2 border-r-gray-200'
+  >
+    {props.children}
+  </div>
+);
+
 const Sidebar = (props: props) => (
   <div
     id='sidebar'
