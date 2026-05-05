@@ -1,3 +1,5 @@
+import { cx } from 'tailwind-variants/lite';
+
 export default function Page() {
   return (
     <section
@@ -10,7 +12,7 @@ export default function Page() {
       }}
     >
       <div
-        class='absolute left-[-80px] top-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none'
+        class='absolute -left-20 top-1/2 -translate-y-1/2 w-175 h-175 pointer-events-none'
         style={{ background: 'var(--hero-gradient)' }}
       />
 
@@ -21,11 +23,16 @@ export default function Page() {
             <span class='block text-white font-bold'>Kris Schneider</span>
           </div>
 
-          <h1 class='text-[clamp(36px,4vw,56px)] font-bold leading-tight bg-gradient-to-r from-[#2a4bb4] via-primary to-[#2a4bb4] bg-clip-text text-transparent'>
+          <h1
+            class={cx(
+              'from-[#2a4bb4] via-primary to-[#2a4bb4] bg-clip-text text-transparent',
+              'text-[clamp(36px,4vw,56px)] font-bold leading-tight bg-linear-to-r'
+            )}
+          >
             Software Developer/Engineer
           </h1>
 
-          <div class='flex items-center gap-[18px]'>
+          <div class='flex items-center gap-4.5'>
             <a
               href='https://github.com'
               class='flex items-center opacity-60 transition-opacity duration-200 hover:opacity-100'
@@ -79,23 +86,29 @@ export default function Page() {
           <div class='flex items-center gap-5'>
             <a
               href='mailto:contact@example.com'
-              class='inline-flex items-center justify-center py-3.5 px-9 bg-primary rounded-xl text-xl font-bold text-white transition-colors duration-200 hover:bg-[#2d6ee0]'
+              class={cx(
+                'inline-flex items-center justify-center py-3.5 px-9 bg-primary rounded-xl',
+                'text-xl font-bold text-white transition-colors duration-200 hover:bg-[#2d6ee0]'
+              )}
             >
               Hire Me
             </a>
             <a
               href='/contact'
-              class='inline-flex items-center justify-center py-3 px-7 rounded-xl border-2 border-white bg-transparent text-xl font-bold text-white opacity-60 transition-opacity duration-200 hover:opacity-90'
+              class={cx(
+                'inline-flex items-center justify-center py-3 px-7 rounded-xl border-2 border-white',
+                'bg-transparent text-xl font-bold text-white opacity-60 transition-opacity duration-200 hover:opacity-90'
+              )}
             >
               Contact Me
             </a>
           </div>
         </div>
 
-        <div class='flex-shrink-0 w-full md:w-[38%] xl:w-[42%] max-w-[320px] md:max-w-[520px] flex justify-center'>
+        <div class='shrink-0 w-full md:w-[38%] xl:w-[42%] max-w-[320px] md:max-w-130 flex justify-center'>
           <img
-            class='w-full max-w-[480px] aspect-square rounded-full object-cover'
-            src='https://api.builder.io/api/v1/image/assets/TEMP/6e18f0bf62acd3e928660e1d0066425796df9d53?width=1350'
+            class='w-full max-w-120 aspect-square rounded-full object-cover'
+            src='/profile.jpg'
             alt='Kris Schneider'
           />
         </div>

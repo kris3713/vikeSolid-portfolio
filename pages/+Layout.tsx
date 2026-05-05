@@ -5,15 +5,14 @@ import './Layout.css';
 import './tailwind.css';
 import type { JSX } from 'solid-js';
 import { createMemo } from 'solid-js';
+import { cx } from 'tailwind-variants/lite';
 import { usePageContext } from 'vike-solid/usePageContext';
 
-type Props = { children?: JSX.Element };
-
-export default function Layout(props: Props) {
+export default function Layout(props: { children?: JSX.Element }) {
   return (
     <div class='min-h-screen bg-bg'>
       <Navbar />
-      <main class='pt-[104px] md:pt-[84px]'>
+      <main class='pt-26 md:pt-21'>
         <div id='page-content'>{props.children}</div>
       </main>
     </div>
@@ -25,17 +24,21 @@ function NavLink(props: {
   label: string;
   children?: JSX.Element;
 }) {
-  const pageContext = usePageContext();
+  const href = () => props.href;
+  const urlPathname = usePageContext().urlPathname;
   const isActive = createMemo(() =>
-    props.href === '/'
-      ? pageContext.urlPathname === props.href
-      : pageContext.urlPathname.startsWith(props.href)
+    href() === '/'
+      ? urlPathname === href()
+      : urlPathname.startsWith(href())
   );
 
   return (
     <a
-      href={props.href}
-      class={`flex items-center gap-1.5 text-lg text-white/50 transition-colors duration-200 hover:text-white/80 ${isActive() ? 'text-primary' : ''}`}
+      href={href()}
+      class={cx(
+        'flex items-center gap-1.5 text-lg text-white/50 transition-colors',
+        `duration-200 hover:text-white/80 ${isActive() ? 'text-primary' : ''}`
+      )}
     >
       <span class='hidden sm:inline'>{props.label}</span>
       {props.children}
@@ -45,10 +48,18 @@ function NavLink(props: {
 
 const Navbar = () => (
   <nav class='fixed top-0 inset-x-0 z-50 py-5 px-10 md:py-3.5 md:px-5'>
-    <div class='flex items-center justify-between bg-surface border border-border rounded-full opacity-90 py-0 px-9 h-16 md:h-14 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] backdrop-blur-[25px]'>
+    <div
+      class={cx(
+        'flex items-center justify-between bg-surface border border-border rounded-full',
+        'opacity-90 py-0 px-9 h-16 md:h-14 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] backdrop-blur-[25px]'
+      )}
+    >
       <a
         href='/'
-        class='text-xl md:text-base font-bold bg-gradient-to-r from-primary via-[#3860c8] to-[#2a4bb4] bg-clip-text text-transparent'
+        class={cx(
+          'text-xl md:text-base font-bold bg-linear-to-r from-primary',
+          'via-[#3860c8] to-[#2a4bb4] bg-clip-text text-transparent'
+        )}
       >
         Kris Schneider
       </a>

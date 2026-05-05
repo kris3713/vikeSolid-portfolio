@@ -3,6 +3,7 @@ import { usePageContext } from 'vike-solid/usePageContext';
 
 export default function Page() {
   const { is404 } = usePageContext();
+
   return (
     <Show
       when={is404}
