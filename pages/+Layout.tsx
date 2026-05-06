@@ -24,20 +24,19 @@ function NavLink(props: {
   label: string;
   children?: JSX.Element;
 }) {
-  const href = () => props.href;
-  const urlPathname = usePageContext().urlPathname;
+  // oxlint-disable-next-line solid/reactivity
+  const { href } = props;
+  const urlPathname = () => usePageContext().urlPathname;
   const isActive = createMemo(() =>
-    href() === '/'
-      ? urlPathname === href()
-      : urlPathname.startsWith(href())
+    href === '/' ? urlPathname() === href : urlPathname().startsWith(href)
   );
 
   return (
     <a
-      href={href()}
+      href={href}
       class={cx(
-        'flex items-center gap-1.5 text-lg text-white/50 transition-colors',
-        `duration-200 hover:text-white/80 ${isActive() ? 'text-primary' : ''}`
+        'flex items-center gap-1.5 text-lg duration-200 transition-colors',
+        `hover:text-white/80 ${isActive() ? 'text-primary' : 'text-white/50'}`
       )}
     >
       <span class='hidden sm:inline'>{props.label}</span>
