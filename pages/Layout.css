@@ -2,6 +2,7 @@
    Global Reset & Base
    ============================================================ */
 * {
+  scroll-behavior: smooth;
   box-sizing: border-box;
 }
 

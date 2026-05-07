@@ -53,11 +53,15 @@ function NavLink(props: {
 }
 
 const Navbar = () => (
-  <nav class='fixed top-0 inset-x-0 z-50 py-5 px-10 md:py-3.5 md:px-5'>
+  <nav
+    id='navbar'
+    class='fixed top-0 inset-x-0 z-50 py-5 px-10 md:py-3.5 md:px-5'
+  >
     <div
       class={cx(
-        'flex items-center justify-between bg-surface border border-border rounded-full',
-        'opacity-90 py-0 px-9 h-16 md:h-14 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)] backdrop-blur-[25px]'
+        'flex items-center justify-between bg-surface/80 border border-border',
+        'backdrop-blur-[25px] py-0 px-9 h-16 md:h-14 shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]',
+        'rounded-full'
       )}
     >
       <a
@@ -69,12 +73,12 @@ const Navbar = () => (
       >
         Kris Schneider
       </a>
-      <div class='flex items-center gap-7'>
+      <div id='sections' class='flex items-center gap-7'>
         <NavLink href='/' label='Home'>
           <House width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink href='/about' label='About'>
+        <NavLink href='/#about-me' label='About'>
           <Info width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
