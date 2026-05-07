@@ -59,9 +59,9 @@ const Navbar = () => (
   >
     <div
       class={cx(
-        'flex items-center justify-between bg-surface/80 border border-border',
+        'flex items-center justify-between py-0 px-9 h-16 md:h-14',
         'backdrop-blur-[25px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]',
-        'py-0 px-9 h-16 md:h-14 rounded-full'
+        'bg-surface/80 border border-border  rounded-full'
       )}
     >
       <a
