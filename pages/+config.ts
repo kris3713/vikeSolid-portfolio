@@ -3,10 +3,9 @@ import type { Config } from 'vike/types';
 
 // Default config (can be overridden by pages)
 // https://vike.dev/config
-
 export default <Config>{
   // https://vike.dev/head-tags
-  title: 'My Vike App',
-  description: 'Demo showcasing Vike',
+  title: `Kris Schneider's portfolio`,
+  description: `A show case of my work and myself.`,
   extends: [vikeSolid]
 };
