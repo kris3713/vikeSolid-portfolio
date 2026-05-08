@@ -44,6 +44,7 @@ const highlights = [
 export default function Page() {
   return (
     <div class='flex flex-col'>
+      {/* Hero Section */}
       <section
         id='hero-section'
         class='flex items-center relative overflow-hidden hero-intro'
@@ -142,6 +143,7 @@ export default function Page() {
           </div>
         </div>
       </section>
+      {/* About Section */}
       <section
         id='about-section'
         class='about-section flex items-center relative overflow-hidden'
