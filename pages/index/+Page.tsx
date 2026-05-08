@@ -202,7 +202,6 @@ export default function Page() {
                 )}
               </For>
             </ul>
-
             {/* <a */}
             {/*   href='/resume.pdf' */}
             {/*   class={cx( */}
@@ -242,16 +241,16 @@ export default function Page() {
                 <span class='stat-number'>5+</span>
                 <span class='stat-label'>Years of Experience</span>
               </div>
-              <div class='stat-divider' />
-              <div class='stat-item'>
-                <span class='stat-number'>40+</span>
-                <span class='stat-label'>Projects Delivered</span>
-              </div>
-              <div class='stat-divider' />
-              <div class='stat-item'>
-                <span class='stat-number'>15+</span>
-                <span class='stat-label'>Happy Clients</span>
-              </div>
+              {/* <div class='stat-divider' /> */}
+              {/* <div class='stat-item'> */}
+              {/*   <span class='stat-number'>40+</span> */}
+              {/*   <span class='stat-label'>Projects Delivered</span> */}
+              {/* </div> */}
+              {/* <div class='stat-divider' /> */}
+              {/* <div class='stat-item'> */}
+              {/*   <span class='stat-number'>15+</span> */}
+              {/*   <span class='stat-label'>Happy Clients</span> */}
+              {/* </div> */}
             </div>
           </div>
         </div>
