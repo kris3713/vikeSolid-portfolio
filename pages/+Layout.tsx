@@ -10,15 +10,25 @@ import {
   House,
   Info
 } from 'lucide-solid';
-import type { JSX } from 'solid-js';
+import type { JSX, ParentProps } from 'solid-js';
 import { createMemo } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 import { usePageContext } from 'vike-solid/usePageContext';
+// import { navigate } from 'vike/client/router';
 
-export default function Layout(props: { children?: JSX.Element }) {
+type Props = JSX.AnchorHTMLAttributes<HTMLAnchorElement> & {
+  label?: string;
+};
+
+// type ClickEvent = MouseEvent & {
+//   currentTarget: HTMLAnchorElement;
+//   target: Element;
+// };
+
+export default function Layout(props: ParentProps) {
   return (
     <div class='min-h-screen bg-bg'>
-      <Navbar />
+      <NavBar />
       <main class='pt-26 md:pt-21'>
         <div id='page-content'>{props.children}</div>
       </main>
@@ -26,33 +36,46 @@ export default function Layout(props: { children?: JSX.Element }) {
   );
 }
 
-function NavLink(props: {
-  href: string;
-  label: string;
-  children?: JSX.Element;
-}) {
+function NavLink(props: Props) {
   // oxlint-disable-next-line solid/reactivity
   const { href } = props;
-  const urlPathname = () => usePageContext().urlPathname;
+  const pageContext = usePageContext();
+  const urlPathname = pageContext.urlPathname;
   const isActive = createMemo(() =>
-    href === '/' ? urlPathname() === href : urlPathname().startsWith(href)
+    href === '/'
+      ? urlPathname === href
+      : urlPathname.startsWith(href as string)
   );
+
+  // function handleClick(event: ClickEvent) {
+  //   event.preventDefault();
+  //
+  //   // const target = event.target;
+  //   const element = document.getElementById('error-page')
+  //   if (element) element.removeChild()
+  //
+  //   console.log(href, urlPathname);
+  // }
 
   return (
     <a
       href={href}
+      // onClick={handleClick}
+      id={props.id}
       class={cx(
-        'flex items-center gap-1.5 text-lg duration-200 transition-colors',
-        `hover:text-active ${isActive() ? 'text-primary' : 'text-inactive'}`
+        props.class ?? [
+          'flex items-center gap-1.5 text-lg duration-200 transition-colors',
+          `hover:text-active ${isActive() ? 'text-primary' : 'text-inactive'}`
+        ]
       )}
     >
-      <span class='hidden sm:inline'>{props.label}</span>
+      {props.label && <span class='hidden sm:inline'>{props.label}</span>}
       {props.children}
     </a>
   );
 }
 
-const Navbar = () => (
+const NavBar = () => (
   <nav
     id='navbar'
     class='fixed top-0 inset-x-0 z-50 py-5 px-10 md:py-3.5 md:px-5'
@@ -64,7 +87,7 @@ const Navbar = () => (
         'bg-surface/80 border border-border  rounded-full'
       )}
     >
-      <a
+      <NavLink
         href='/'
         class={cx(
           'text-xl md:text-base font-bold bg-linear-to-r bg-clip-text',
@@ -72,25 +95,25 @@ const Navbar = () => (
         )}
       >
         Kris Schneider
-      </a>
+      </NavLink>
       <div id='sections' class='flex items-center gap-7'>
-        <NavLink href='/' label='Home'>
+        <NavLink id='index-route' href='/' label='Home'>
           <House width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink href='/#about-me' label='About'>
+        <NavLink id='about-route' href='/#about' label='About'>
           <Info width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink href='/projects' label='Projects'>
+        <NavLink id='projects-route' /*href='/projects'*/ label='Projects'>
           <FolderKanban width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink href='/resume' label='Resume'>
+        <NavLink id='resume-route' /*href='/resume'*/ label='Resume'>
           <FileUserIcon width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink href='/contact' label='Contact Me'>
+        <NavLink id='contact-route' /*href='/contact'*/ label='Contact Me'>
           <CircleUserRound width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
       </div>

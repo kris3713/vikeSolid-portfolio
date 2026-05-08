@@ -10,6 +10,7 @@
     "correctness": "off"
   },
   "env": {
+    "browser": true,
     "builtin": true
   },
   "rules": {
@@ -112,9 +113,5 @@
         "eslint-plugin-solid"
       ]
     }
-  ],
-  "globals": {
-    "console": "readonly",
-    "document": "readonly"
-  }
+  ]
 }

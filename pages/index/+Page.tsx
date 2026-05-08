@@ -1,12 +1,12 @@
 import {
+  // Download,
+  CheckCircle2,
   Code2,
+  Cpu,
   Database,
   Globe,
   Layers,
-  Terminal,
-  Cpu,
-  // Download,
-  CheckCircle2
+  Terminal
 } from 'lucide-solid';
 import { For } from 'solid-js';
 
@@ -84,7 +84,7 @@ export default function Page() {
 
             <div class='flex items-center gap-4.5'>
               <a
-                href='https://github.com'
+                href='https://github.com/kris3713'
                 class='flex items-center opacity-60 transition-opacity duration-200 hover:opacity-100'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -159,7 +159,7 @@ export default function Page() {
                 Get to know me
               </span>
               <h2
-                id='about-me'
+                id='about'
                 class={cx(
                   'from-[#2a4bb4] via-primary to-[#2a4bb4]',
                   'bg-clip-text text-transparent leading-tight font-bold',

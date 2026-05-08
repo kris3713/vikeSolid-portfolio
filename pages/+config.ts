@@ -7,5 +7,6 @@ export default defineConfig<Config>({
   // https://vike.dev/head-tags
   title: `Kris Schneider's portfolio`,
   description: `A show case of my work and myself.`,
-  extends: [vikeSolid]
+  extends: [vikeSolid],
+  ssr: true
 });

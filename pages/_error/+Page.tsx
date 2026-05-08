@@ -3,19 +3,20 @@ import { usePageContext } from 'vike-solid/usePageContext';
 
 export default function Page() {
   const { is404 } = usePageContext();
-
   return (
-    <Show
-      when={is404}
-      fallback={
-        <>
-          <h1>Internal Error</h1>
-          <p>Something went wrong.</p>
-        </>
-      }
-    >
-      <h1>Page Not Found</h1>
-      <p>This page could not be found.</p>
-    </Show>
+    <div id='error-page'>
+      <Show
+        when={is404}
+        // fallback={
+        //   <>
+        //     <h1>Internal Error</h1>
+        //     <p>Something went wrong.</p>
+        //   </>
+        // }
+      >
+        <h1>Page Not Found</h1>
+        <p>This page could not be found.</p>
+      </Show>
+    </div>
   );
 }
