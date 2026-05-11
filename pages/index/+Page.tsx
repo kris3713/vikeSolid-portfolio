@@ -6,9 +6,10 @@ import {
   Database,
   Globe,
   Layers,
+  type LucideProps,
   Terminal
 } from 'lucide-solid';
-import { For } from 'solid-js';
+import { For, type JSX } from 'solid-js';
 
 import './styles.css';
 
@@ -17,29 +18,53 @@ import { cx } from 'tailwind-variants/lite';
 import GitHub from '../../assets/github.svg';
 import LinkedIn from '../../assets/icons8-linkedin-30.svg';
 
-const skills = [
-  { icon: Code2, label: 'Frontend Dev', desc: 'React, SolidJS, Vue' },
-  { icon: Terminal, label: 'Backend Dev', desc: 'Node.js, Go, Python' },
+type Skills = {
+  icon: (props: LucideProps) => JSX.Element;
+  label: string;
+  desc: string;
+};
+
+// TODO: Correct all these skills to be more accurate
+const skills: Skills[] = [
+  {
+    icon: Code2,
+    label: 'Frontend Dev',
+    desc: 'React, SolidJS, Vue, HTML'
+  },
+  {
+    icon: Terminal,
+    label: 'Backend Dev',
+    desc: `Node.js/Bun (JavaScript/TypeScript), Go, Python, C#,`
+  },
   {
     icon: Database,
     label: 'Databases',
-    desc: 'PostgreSQL, Redis, MongoDB'
+    desc: 'PostgreSQL, Redis/Valkey, MongoDB'
   },
-  { icon: Globe, label: 'Web APIs', desc: 'REST, GraphQL, WebSockets' },
+  {
+    icon: Globe,
+    label: 'Web APIs',
+    desc: 'REST'
+  },
   {
     icon: Layers,
     label: 'Architecture',
     desc: 'Microservices, Serverless'
   },
-  { icon: Cpu, label: 'DevOps', desc: 'Docker, CI/CD, AWS' }
-] as const;
+  {
+    icon: Cpu,
+    label: 'DevOps',
+    desc: 'Docker, Podman, CI/CD, AWS'
+  }
+];
 
+// TODO: Change highlights to be more accurate
 const highlights = [
   'Passionate about clean, performant code',
   'Strong focus on developer experience',
   'Experienced in agile team environments',
-  'Always learning new technologies'
-] as const;
+  'Always wanting to learn new technologies'
+];
 
 export default function Page() {
   return (
@@ -63,7 +88,7 @@ export default function Page() {
             'justify-between w-full gap-10'
           )}
         >
-          <div class='flex-1 flex flex-col gap-7 min-w-0'>
+          <div class='flex flex-1 flex-col gap-7 min-w-0'>
             <div class='text-2xl leading-tight text-white'>
               <span class='text-white/60 font-normal'>Hi, I'm</span>
               <span class='block text-white font-bold'>
@@ -95,7 +120,7 @@ export default function Page() {
               </a>
 
               <a
-                href='https://linkedin.com'
+                href='https://www.linkedin.com/in/kris-schneider-b6715b230/'
                 class='flex items-center opacity-60 transition-opacity duration-200 hover:opacity-100'
                 target='_blank'
                 rel='noopener noreferrer'
@@ -107,7 +132,7 @@ export default function Page() {
 
             <div class='flex items-center gap-5'>
               <a
-                href='mailto:contact@example.com'
+                href='mailto:Kris37Schneider@vivaldi.net'
                 class={cx(
                   'inline-flex items-center justify-center py-3.5 px-9 bg-primary rounded-xl',
                   'text-xl font-bold text-white transition-colors duration-200 hover:bg-[#2d6ee0]'
@@ -130,6 +155,7 @@ export default function Page() {
           </div>
 
           <div
+            id='profile'
             class={cx(
               'shrink-0 w-full md:w-[38%] xl:w-[42%]',
               'max-w-[320px] md:max-w-230 flex justify-center'
@@ -157,7 +183,7 @@ export default function Page() {
           {/* Left column — bio */}
           <div class='flex-1 flex flex-col gap-8 min-w-0'>
             <div class='flex flex-col gap-3'>
-              <span class='text-primary font-semibold tracking-widest text-sm uppercase'>
+              <span class='text-white/60 font-semibold tracking-widest text-sm uppercase'>
                 Get to know me
               </span>
               <h2
@@ -172,7 +198,13 @@ export default function Page() {
               </h2>
             </div>
 
-            <article class='flex flex-col gap-4 text-white/70 about-body-text leading-relaxed'>
+            <article
+              id='about-body'
+              class={cx(
+                'flex flex-col gap-4 text-white/70',
+                'leading-relaxed about-body-text'
+              )}
+            >
               <p>
                 I'm a Software Developer and Engineer with a passion for
                 building elegant, high-performance web applications. With
@@ -191,17 +223,18 @@ export default function Page() {
 
             <ul class='flex flex-col gap-3'>
               <For each={highlights}>
-                {item => (
+                {highlight => (
                   <li class='flex items-center gap-3 text-white/80 about-body-text'>
                     <CheckCircle2
                       size={18}
                       class='text-primary shrink-0'
                     />
-                    {item}
+                    {highlight}
                   </li>
                 )}
               </For>
             </ul>
+
             {/* <a */}
             {/*   href='/resume.pdf' */}
             {/*   class={cx( */}
@@ -242,11 +275,13 @@ export default function Page() {
                 <span class='stat-label'>Years of Experience</span>
               </div>
               {/* <div class='stat-divider' /> */}
+
               {/* <div class='stat-item'> */}
               {/*   <span class='stat-number'>40+</span> */}
               {/*   <span class='stat-label'>Projects Delivered</span> */}
               {/* </div> */}
               {/* <div class='stat-divider' /> */}
+
               {/* <div class='stat-item'> */}
               {/*   <span class='stat-number'>15+</span> */}
               {/*   <span class='stat-label'>Happy Clients</span> */}
