@@ -24,6 +24,19 @@ type Skills = {
   desc: string;
 };
 
+const paragraphs = [
+  `I'm a Software Developer and Engineer with a passion for
+  building elegant, high-performance web applications. With
+  years of hands-on experience across the full stack, I
+  thrive on turning complex problems into simple,
+  user-friendly solutions.`,
+  `I enjoy working closely with product teams to craft
+  experiences that are both technically sound and genuinely
+  delightful to use. Outside of coding, I'm an avid
+  open-source contributor and enjoy exploring the latest
+  trends in web performance and developer tooling.`
+];
+
 // TODO: Correct all these skills to be more accurate
 const skills: Skills[] = [
   {
@@ -72,7 +85,10 @@ export default function Page() {
       {/* Hero Section */}
       <section
         id='hero-section'
-        class='flex items-center relative overflow-hidden hero-intro'
+        class={cx(
+          'flex items-center relative overflow-hidden',
+          'min-h-(--min-height) p-(--padding)'
+        )}
       >
         <div
           id='fancy-pattern'
@@ -96,7 +112,7 @@ export default function Page() {
               </span>
             </div>
 
-            <h1
+            <div
               class={cx(
                 'from-[#2a4bb4] via-primary to-[#2a4bb4]',
                 'bg-clip-text text-transparent leading-tight',
@@ -106,7 +122,7 @@ export default function Page() {
             >
               {`Software
               Developer/Engineer`}
-            </h1>
+            </div>
 
             <div class='flex items-center gap-4.5'>
               <a
@@ -169,10 +185,14 @@ export default function Page() {
           </div>
         </div>
       </section>
+
       {/* About Section */}
       <section
         id='about-section'
-        class='about-section flex items-center relative overflow-hidden'
+        class={cx(
+          'flex items-center relative overflow-hidden',
+          'min-h-(--min-height) p-(--padding)'
+        )}
       >
         <div
           class={cx(
@@ -181,50 +201,40 @@ export default function Page() {
           )}
         >
           {/* Left column — bio */}
-          <div class='flex-1 flex flex-col gap-8 min-w-0'>
+          <div id='bio' class='flex-1 flex flex-col gap-8 min-w-0'>
             <div class='flex flex-col gap-3'>
-              <span class='text-white/60 font-semibold tracking-widest text-sm uppercase'>
-                Get to know me
-              </span>
-              <h2
-                id='about'
+              <span
                 class={cx(
-                  'from-[#2a4bb4] via-primary to-[#2a4bb4]',
-                  'bg-clip-text text-transparent leading-tight font-bold',
-                  'bg-linear-to-r about-heading'
+                  'text-white/60 font-semibold',
+                  'tracking-widest text-sm uppercase'
                 )}
               >
-                About Me
-              </h2>
+                Get to know me
+              </span>
+              <h1 id='about'>About Me</h1>
             </div>
 
             <article
               id='about-body'
               class={cx(
                 'flex flex-col gap-4 text-white/70',
-                'leading-relaxed about-body-text'
+                'text-(size:--text-size) leading-relaxed'
               )}
             >
-              <p>
-                I'm a Software Developer and Engineer with a passion for
-                building elegant, high-performance web applications. With
-                years of hands-on experience across the full stack, I
-                thrive on turning complex problems into simple,
-                user-friendly solutions.
-              </p>
-              <p>
-                I enjoy working closely with product teams to craft
-                experiences that are both technically sound and genuinely
-                delightful to use. Outside of coding, I'm an avid
-                open-source contributor and enjoy exploring the latest
-                trends in web performance and developer tooling.
-              </p>
+              <For each={paragraphs}>
+                {paragraph => <p>{paragraph}</p>}
+              </For>
             </article>
 
             <ul class='flex flex-col gap-3'>
               <For each={highlights}>
                 {highlight => (
-                  <li class='flex items-center gap-3 text-white/80 about-body-text'>
+                  <li
+                    class={cx(
+                      'flex items-center text-white/80',
+                      'text-(size:--text-size) gap-3'
+                    )}
+                  >
                     <CheckCircle2
                       size={18}
                       class='text-primary shrink-0'

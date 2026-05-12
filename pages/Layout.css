@@ -1,9 +1,23 @@
+@import './tailwind.css';
+
 /* ============================================================
    Global Reset & Base
    ============================================================ */
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
+}
+
+h1 {
+  font-size: var(--heading-size);
+  background-clip: text;
+  color: transparent;
+  font-weight: 700;
+  line-height: 1.25;
+  @apply from-[#2a4bb4]
+    via-primary
+    to-[#2a4bb4]
+    bg-linear-to-r;
 }
 
 body {
@@ -39,28 +53,28 @@ body.page-transition #page-content {
    Responsive calc-based values
    ============================================================ */
 :root {
-  --hero-min-height: calc(100vh - 104px);
-  --about-min-height: calc(100vh - 104px);
-  --hero-padding: 60px 80px;
-  --about-padding: 80px 80px;
-  --about-heading-size: 36px;
-  --about-text-size: 20px;
+  --min-height: calc(100vh - 104px);
+  /* --min-height: calc(100vh - 104px); */
+  --padding: 60px 80px;
+  /* --padding: 80px 80px; */
+  --heading-size: 36px;
+  --text-size: 20px;
 }
 
 @media (max-width: 900px) {
   :root {
-    --hero-min-height: calc(100vh - 84px);
-    --about-min-height: calc(100vh - 84px);
-    --hero-padding: 48px 28px;
-    --about-padding: 48px 28px;
+    --min-height: calc(100vh - 84px);
+    /* --min-height: calc(100vh - 84px); */
+    --padding: 48px 28px;
+    /* --padding: 48px 28px; */
   }
 }
 
 @media (max-width: 600px) {
   :root {
-    --hero-padding: 32px 20px;
-    --about-padding: 32px 20px;
-    --about-heading-size: 28px;
-    --about-text-size: 17px;
+    --padding: 32px 20px;
+    /* --padding: 32px 20px; */
+    --heading-size: 28px;
+    --text-size: 17px;
   }
 }
