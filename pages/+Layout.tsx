@@ -105,7 +105,7 @@ const NavBar = () => (
           <Info width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink id='projects-route' /*href='/projects'*/ label='Projects'>
+        <NavLink id='projects-route' href='/projects' label='Projects'>
           <FolderKanban width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
