@@ -124,20 +124,19 @@ export default function Page() {
               Developer/Engineer`}
             </div>
 
-            <div class='flex items-center gap-4.5'>
+            <div id='links' class='flex items-center gap-4.5'>
               <a
+                id='github'
                 href='https://github.com/kris3713'
-                class='flex items-center opacity-60 transition-opacity duration-200 hover:opacity-100'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='GitHub'
               >
                 <img width={24} height={24} src={GitHub} />
               </a>
-
               <a
+                id='linkedin'
                 href='https://www.linkedin.com/in/kris-schneider-b6715b230/'
-                class='flex items-center opacity-60 transition-opacity duration-200 hover:opacity-100'
                 target='_blank'
                 rel='noopener noreferrer'
                 aria-label='LinkedIn'
@@ -261,7 +260,9 @@ export default function Page() {
 
           {/* Right column - skills */}
           <div class='flex flex-col flex-1 gap-6 min-w-0 w-full'>
-            <div class='grid grid-cols-[repeat(2,1fr)] gap-3'> {/* TODO: Add responsive design for sm: */}
+            <div class='grid grid-cols-[repeat(2,1fr)] gap-3'>
+              {' '}
+              {/* TODO: Add responsive design for sm: */}
               <For each={skills}>
                 {({ icon: Icon, label, desc }) => (
                   <div class='skill-card'>

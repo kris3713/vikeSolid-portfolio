@@ -50,9 +50,17 @@ body.page-transition #page-content {
 }
 
 /* ============================================================
-   Global Classes
+   Global Classes and Id's
    ============================================================ */
-/* TODO: Add some here eventually. */
+#links a {
+  opacity: 60%;
+  transition-duration: 200ms;
+
+  &:hover {
+    opacity: 100%;
+    @apply transition-opacity;
+  }
+}
 
 /*  ============================================================
     Global Responsive calc-based values
