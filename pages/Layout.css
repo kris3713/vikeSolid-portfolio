@@ -1,8 +1,8 @@
 @import './tailwind.css';
 
-/* ============================================================
-   Global Reset & Base
-   ============================================================ */
+/*  ============================================================
+    Global Reset & Base
+    ============================================================ */
 * {
   scroll-behavior: smooth;
   box-sizing: border-box;
@@ -37,9 +37,9 @@ a {
   text-decoration: none;
 }
 
-/* ============================================================
-   Page Transition Animation
-   ============================================================ */
+/*  ============================================================
+    Page Transition Animation
+    ============================================================ */
 #page-content {
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
@@ -50,8 +50,13 @@ body.page-transition #page-content {
 }
 
 /* ============================================================
-   Responsive calc-based values
+   Global Classes
    ============================================================ */
+/* TODO: Add some here eventually. */
+
+/*  ============================================================
+    Global Responsive calc-based values
+    ============================================================ */
 :root {
   --min-height: calc(100vh - 104px);
   /* --min-height: calc(100vh - 104px); */
@@ -61,16 +66,23 @@ body.page-transition #page-content {
   --text-size: 20px;
 }
 
-@media (max-width: 900px) {
+/* NOTE: Measurements are done according to TailwindCSS
+  responsive design
+
+  https://tailwindcss.com/docs/responsive-design#overview */
+
+/* 64rem = 1024px */
+@media (width < 64rem) {
   :root {
     --min-height: calc(100vh - 84px);
     /* --min-height: calc(100vh - 84px); */
-    --padding: 48px 28px;
+    /* --padding: 48px 28px; */
     /* --padding: 48px 28px; */
   }
 }
 
-@media (max-width: 600px) {
+/* 40rem = 640px */
+@media (width < 40rem) {
   :root {
     --padding: 32px 20px;
     /* --padding: 32px 20px; */

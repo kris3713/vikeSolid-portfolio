@@ -259,9 +259,9 @@ export default function Page() {
             {/* </a> */}
           </div>
 
-          {/* Right column — skills */}
-          <div class='flex-1 flex flex-col gap-6 min-w-0 w-full'>
-            <div class='skills-grid'>
+          {/* Right column - skills */}
+          <div class='flex flex-col flex-1 gap-6 min-w-0 w-full'>
+            <div class='grid grid-cols-[repeat(2,1fr)] gap-3'> {/* TODO: Add responsive design for sm: */}
               <For each={skills}>
                 {({ icon: Icon, label, desc }) => (
                   <div class='skill-card'>
