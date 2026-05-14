@@ -20,11 +20,6 @@ type Props = JSX.AnchorHTMLAttributes<HTMLAnchorElement> & {
   label?: string;
 };
 
-// type ClickEvent = MouseEvent & {
-//   currentTarget: HTMLAnchorElement;
-//   target: Element;
-// };
-
 export default function Layout(props: ParentProps) {
   return (
     <div class='min-h-screen bg-bg'>
@@ -44,7 +39,7 @@ function NavLink(props: Props) {
   const isActive = createMemo(() =>
     href === '/'
       ? urlPathname === href
-      : urlPathname.startsWith(href as string)
+      : urlPathname.startsWith(href!)
   );
 
   // function handleClick(event: ClickEvent) {
@@ -64,12 +59,18 @@ function NavLink(props: Props) {
       id={props.id}
       class={cx(
         props.class ?? [
-          'flex items-center gap-1.5 text-lg duration-200 transition-colors',
-          `hover:text-active ${isActive() ? 'text-primary' : 'text-inactive'}`
+          'flex items-center gap-1.5 text-lg',
+          'duration-200 transition-colors',
+          'hover:text-active',
+          isActive() ? 'text-primary' : 'text-inactive'
         ]
       )}
     >
-      {props.label && <span class='hidden sm:inline'>{props.label}</span>}
+      {props.label && (
+        <span id='label' class='hidden sm:inline'>
+          {props.label}
+        </span>
+      )}
       {props.children}
     </a>
   );
@@ -78,20 +79,27 @@ function NavLink(props: Props) {
 const NavBar = () => (
   <nav
     id='navbar'
-    class='fixed top-0 inset-x-0 z-50 py-5 px-10 md:py-3.5 md:px-5'
+    class={cx(
+      'fixed top-0 inset-x-0 z-50',
+      'py-5 px-10 md:py-3.5 md:px-5'
+    )}
   >
     <div
       class={cx(
-        'flex items-center justify-between py-0 px-9 h-16 md:h-14',
-        'backdrop-blur-[25px] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]',
-        'bg-surface/80 border border-border  rounded-full'
+        'flex items-center justify-between',
+        'py-0 px-9 h-16 md:h-14 backdrop-blur-[25px]',
+        'shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]',
+        'bg-surface/80 border border-border',
+        'rounded-full'
       )}
     >
       <NavLink
         href='/'
         class={cx(
-          'text-xl md:text-base font-bold bg-linear-to-r bg-clip-text',
-          'text-transparent from-primary via-[#3860c8] to-[#2a4bb4]'
+          'text-xl md:text-base font-bold',
+          'bg-linear-to-r bg-clip-text',
+          'text-transparent from-primary',
+          'via-[#3860c8] to-[#2a4bb4]'
         )}
       >
         Kris Schneider
@@ -105,16 +113,32 @@ const NavBar = () => (
           <Info width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink id='projects-route' href='/projects' label='Projects'>
+        <NavLink
+          id='projects-route'
+          href='/projects'
+          label='Projects'
+        >
           <FolderKanban width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink id='resume-route' /*href='/resume'*/ label='Resume'>
+        <NavLink
+          id='resume-route'
+          // href='/resume'
+          label='Resume'
+        >
           <FileUserIcon width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
-        <NavLink id='contact-route' /*href='/contact'*/ label='Contact Me'>
-          <CircleUserRound width={24} height={24} viewBox='0 0 24 24' />
+        <NavLink
+          id='contact-route'
+          // href='/contact'
+          label='Contact Me'
+        >
+          <CircleUserRound
+            width={24}
+            height={24}
+            viewBox='0 0 24 24'
+          />
         </NavLink>
       </div>
     </div>
