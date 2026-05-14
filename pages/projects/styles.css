@@ -1,0 +1,78 @@
+@import '../Layout.css';
+
+/*  ============================================================
+    Reset & Base
+    ============================================================ */
+h2 {
+  font-size: var(--heading2-size);
+  background-clip: text;
+  color: white;
+  font-weight: 700;
+  line-height: 1.25;
+  @apply transition-colors;
+}
+
+/* ============================================================
+   Classes
+   ============================================================ */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* justify-content: flex-end; */
+  gap: 14px;
+  height: 18rem;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(56, 96, 200, 0.35);
+
+  h2 {
+    color: var(--color-primary);
+  }
+
+  p {
+    @apply text-white/95;
+  }
+}
+
+/* .project-desc { */
+/*   font-size: var(--desc-size); */
+/*   color: var(--color-active); */
+/*   line-height: 1.625; */
+/* } */
+
+/*  ============================================================
+    Responsive calc-based values
+    ============================================================ */
+:root {
+  --heading2-size: 24px;
+  --desc-size: 16px;
+}
+
+/* NOTE: Measurements are done according to TailwindCSS
+  responsive design
+
+  https://tailwindcss.com/docs/responsive-design#overview */
+
+/* /* 64rem = 1024px */
+/* @media (width < 64rem) { */
+/*   :root { */
+/*   } */
+/* } */
+
+/* 40rem = 640px */
+@media (width < 40rem) {
+  :root {
+    --heading2-size: 16px;
+    --desc-size: 12px;
+  }
+}
