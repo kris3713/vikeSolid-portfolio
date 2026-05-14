@@ -14,7 +14,6 @@ import type { JSX, ParentProps } from 'solid-js';
 import { createMemo } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 import { usePageContext } from 'vike-solid/usePageContext';
-import { navigate } from 'vike/client/router';
 
 type Props = JSX.AnchorHTMLAttributes<HTMLAnchorElement> & {
   label?: string;
@@ -44,14 +43,7 @@ function NavLink(props: Props) {
 
   return (
     <a
-      // href={href()}
-      onClick={event => {
-        // Native href causes page loading bugs,
-        // this does the same thing without any
-        // bugs.
-        event.preventDefault()
-        navigate(href()!)
-      }}
+      href={href()}
       id={props.id}
       class={cx(
         props.class ?? [
