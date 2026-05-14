@@ -40,7 +40,7 @@ export default function Page() {
                 >
                   {link && (
                     <a href={link} target='_blank'>
-                      <ExternalLink width={24} height={24} />
+                      <ExternalLink width={24} height={24} viewBox='0 0 24 24' />
                     </a>
                   )}
                   <a href={git_url} target='_blank'>
