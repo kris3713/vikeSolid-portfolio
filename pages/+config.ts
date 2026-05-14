@@ -8,6 +8,5 @@ export default defineConfig<Config>({
   title: `Kris Schneider's portfolio`,
   description: `A show case of my work and myself.`,
   extends: [vikeSolid],
-  ssr: true,
   prerender: true
 });
