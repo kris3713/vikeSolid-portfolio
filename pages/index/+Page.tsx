@@ -12,7 +12,6 @@ import {
 import { For, type JSX } from 'solid-js';
 
 import './styles.css';
-
 import { cx } from 'tailwind-variants/lite';
 
 import GitHub from '../../assets/github.svg';
@@ -279,7 +278,9 @@ export default function Page() {
                       <span class='font-semibold text-white text-base'>
                         {label}
                       </span>
-                      <span class='text-white/50 text-sm'>{desc}</span>
+                      <span class='text-white/50 text-sm'>
+                        {desc}
+                      </span>
                     </div>
                   </div>
                 )}
