@@ -30,15 +30,14 @@ export default function Layout(props: ParentProps) {
   );
 }
 
-// TODO: figure out why NavLink reactivity is not actually being "reactive"
 function NavLink(props: Props) {
   const href = () => props.href;
   const pageContext = usePageContext();
-  const urlPathname = pageContext.urlPathname;
+  const urlPathname = () => pageContext.urlPathname;
   const isActive = createMemo(() =>
     href() === '/'
-      ? urlPathname === href()
-      : urlPathname.startsWith(href()!)
+      ? urlPathname() === href()
+      : urlPathname().startsWith(href()!)
   );
 
   return (
