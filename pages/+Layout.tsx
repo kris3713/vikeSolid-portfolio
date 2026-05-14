@@ -32,13 +32,13 @@ export default function Layout(props: ParentProps) {
 }
 
 function NavLink(props: Props) {
-  const href = createMemo(() => props.href);
+  const href = createMemo(() => props.href as string);
   const pageContext = usePageContext();
   const urlPathname = pageContext.urlPathname;
   const isActive = createMemo(() =>
     href() === '/'
       ? urlPathname === href()
-      : urlPathname.startsWith(href()!)
+      : urlPathname.startsWith(href())
   );
 
   return (
@@ -46,7 +46,7 @@ function NavLink(props: Props) {
       href={href()}
       // onClick={e => {
       //   e.preventDefault()
-      //   navigate(href()!)
+      //   navigate(href())
       // }}
       id={props.id}
       class={cx(
