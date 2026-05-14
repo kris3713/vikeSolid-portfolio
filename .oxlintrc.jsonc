@@ -104,5 +104,8 @@
       },
       "jsPlugins": ["eslint-plugin-solid"]
     }
-  ]
+  ],
+  "globals": {
+    "Bun": "readonly"
+  }
 }
