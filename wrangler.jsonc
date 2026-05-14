@@ -1,0 +1,10 @@
+{
+  "$schema": "https://www.unpkg.com/wrangler/config-schema.json",
+  "name": "portfolio-worker",
+  "compatibility_date": "2026-05-14",
+  "build": {
+    "command": "bun run build --mode production",
+    "cwd": ".",
+    "watch_dir": "./pages"
+  }
+}
