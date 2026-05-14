@@ -32,30 +32,22 @@ export default function Layout(props: ParentProps) {
 }
 
 function NavLink(props: Props) {
-  // oxlint-disable-next-line solid/reactivity
-  const { href } = props;
+  const href = createMemo(() => props.href);
   const pageContext = usePageContext();
   const urlPathname = pageContext.urlPathname;
   const isActive = createMemo(() =>
-    href === '/'
-      ? urlPathname === href
-      : urlPathname.startsWith(href!)
+    href() === '/'
+      ? urlPathname === href()
+      : urlPathname.startsWith(href()!)
   );
-
-  // function handleClick(event: ClickEvent) {
-  //   event.preventDefault();
-  //
-  //   // const target = event.target;
-  //   const element = document.getElementById('error-page')
-  //   if (element) element.removeChild()
-  //
-  //   console.log(href, urlPathname);
-  // }
 
   return (
     <a
-      href={href}
-      // onClick={handleClick}
+      href={href()}
+      // onClick={e => {
+      //   e.preventDefault()
+      //   navigate(href()!)
+      // }}
       id={props.id}
       class={cx(
         props.class ?? [
