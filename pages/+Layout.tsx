@@ -14,7 +14,7 @@ import type { JSX, ParentProps } from 'solid-js';
 import { createMemo } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 import { usePageContext } from 'vike-solid/usePageContext';
-// import { navigate } from 'vike/client/router';
+import { navigate } from 'vike/client/router';
 
 type Props = JSX.AnchorHTMLAttributes<HTMLAnchorElement> & {
   label?: string;
@@ -33,22 +33,25 @@ export default function Layout(props: ParentProps) {
 
 // TODO: figure out why NavLink reactivity is not actually being "reactive"
 function NavLink(props: Props) {
-  const href = createMemo(() => props.href as string);
+  const href = () => props.href;
   const pageContext = usePageContext();
   const urlPathname = pageContext.urlPathname;
   const isActive = createMemo(() =>
     href() === '/'
       ? urlPathname === href()
-      : urlPathname.startsWith(href())
+      : urlPathname.startsWith(href()!)
   );
 
   return (
     <a
-      href={href()}
-      // onClick={e => {
-      //   e.preventDefault()
-      //   navigate(href())
-      // }}
+      // href={href()}
+      onClick={event => {
+        // Native href causes page loading bugs,
+        // this does the same thing without any
+        // bugs.
+        event.preventDefault()
+        navigate(href()!)
+      }}
       id={props.id}
       class={cx(
         props.class ?? [
@@ -56,7 +59,8 @@ function NavLink(props: Props) {
           'duration-200 transition-colors',
           'hover:text-active',
           isActive() ? 'text-primary' : 'text-inactive'
-        ]
+        ],
+        'cursor-pointer'
       )}
     >
       {props.label && (
