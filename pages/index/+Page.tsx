@@ -100,8 +100,9 @@ export default function Page() {
 
         <div
           class={cx(
-            'flex flex-col-reverse md:flex-row items-center',
-            'justify-between w-full gap-10'
+            'flex flex-col-reverse md:flex-row',
+            'items-center justify-between w-full',
+            'gap-10'
           )}
         >
           <div class='flex flex-1 flex-col gap-7 min-w-0'>
@@ -149,8 +150,10 @@ export default function Page() {
               <a
                 href='mailto:Kris37Schneider@vivaldi.net'
                 class={cx(
-                  'inline-flex items-center justify-center py-3.5 px-9 bg-primary rounded-xl',
-                  'text-xl font-bold text-white transition-colors duration-200 hover:bg-[#2d6ee0]'
+                  'inline-flex items-center justify-center',
+                  'py-3.5 px-9 bg-primary rounded-xl',
+                  'text-xl font-bold text-white transition-colors',
+                  'duration-200 hover:bg-[#2d6ee0]'
                 )}
               >
                 Hire Me
@@ -199,7 +202,7 @@ export default function Page() {
             'justify-between w-full gap-14'
           )}
         >
-          {/* Left column — bio */}
+          {/* Left column - bio */}
           <div id='bio' class='flex-1 flex flex-col gap-8 min-w-0'>
             <div class='flex flex-col gap-3'>
               <span
@@ -260,9 +263,12 @@ export default function Page() {
 
           {/* Right column - skills */}
           <div class='flex flex-col flex-1 gap-6 min-w-0 w-full'>
-            <div class='grid grid-cols-[repeat(2,1fr)] gap-3'>
-              {' '}
-              {/* TODO: Add responsive design for sm: */}
+            <div
+              class={cx(
+                'grid grid-cols-[repeat(2,1fr)]',
+                'max-sm:grid-cols-[1fr] gap-3'
+              )}
+            >
               <For each={skills}>
                 {({ icon: Icon, label, desc }) => (
                   <div class='skill-card'>

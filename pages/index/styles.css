@@ -29,12 +29,6 @@
 /*   font-size: var(--text-size); */
 /* } */
 
-/* .skills-grid { */
-/*   display: grid; */
-/*   grid-template-columns: repeat(2, 1fr); */
-/*   gap: 12px; */
-/* } */
-
 .skill-card {
   display: flex;
   align-items: center;
@@ -111,10 +105,6 @@
 
 /* 40rem = 640px */
 @media (width < 40rem) {
-  /* .skills-grid { */
-  /*   grid-template-columns: 1fr; */
-  /* } */
-
   .stats-row {
     padding: 18px 16px;
   }
