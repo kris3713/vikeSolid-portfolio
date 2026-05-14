@@ -51,8 +51,7 @@ function NavLink(props: Props) {
           'duration-200 transition-colors',
           'hover:text-active',
           isActive() ? 'text-primary' : 'text-inactive'
-        ],
-        'cursor-pointer'
+        ]
       )}
     >
       {props.label && (
