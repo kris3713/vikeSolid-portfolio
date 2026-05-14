@@ -1,11 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/refs/heads/main/npm/oxlint/configuration_schema.json",
-  "plugins": [
-    "eslint",
-    "typescript",
-    "unicorn",
-    "oxc"
-  ],
+  "plugins": ["eslint", "typescript", "unicorn", "oxc"],
   "categories": {
     "correctness": "off"
   },
@@ -79,9 +74,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.{ts,tsx}"
-      ],
+      "files": ["**/*.{ts,tsx}"],
       "rules": {
         "solid/jsx-no-duplicate-props": "error",
         "solid/jsx-no-undef": [
@@ -109,9 +102,7 @@
         "solid/no-proxy-apis": "off",
         "solid/prefer-classlist": "off"
       },
-      "jsPlugins": [
-        "eslint-plugin-solid"
-      ]
+      "jsPlugins": ["eslint-plugin-solid"]
     }
   ]
 }
