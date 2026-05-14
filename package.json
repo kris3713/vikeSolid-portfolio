@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "bun --bun vike dev",
     "build": "bun --bun vike build",
-    "preview": "bun --bun vike build && vike preview",
+    "preview": "bun --bun vike build && bun --bun vike preview",
     "lint": "bun --bun oxlint .",
     "lint:type-aware": "bun --bun oxlint --type-aware .",
     "format": "bun --bun oxfmt",
