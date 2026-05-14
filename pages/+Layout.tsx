@@ -31,6 +31,8 @@ export default function Layout(props: ParentProps) {
   );
 }
 
+// TODO: figure out why NavLink reactivity is
+// not actually being "reactive"
 function NavLink(props: Props) {
   const href = createMemo(() => props.href as string);
   const pageContext = usePageContext();
