@@ -21,7 +21,7 @@ type Props = JSX.AnchorHTMLAttributes<HTMLAnchorElement> & {
 
 export default function Layout(props: ParentProps) {
   return (
-    <div class='min-h-screen bg-bg'>
+    <div id='layout' class='min-h-screen bg-bg'>
       <NavBar />
       <main class='pt-26 md:pt-21'>
         <div id='page-content'>{props.children}</div>
