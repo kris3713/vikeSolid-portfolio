@@ -70,6 +70,7 @@ const NavBar = () => (
       'fixed top-0 inset-x-0 z-50',
       'py-5 px-10 md:py-3.5 md:px-5'
     )}
+    aria-label='Navigation Bar'
   >
     <div
       class={cx(
