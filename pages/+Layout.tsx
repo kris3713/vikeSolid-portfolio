@@ -31,18 +31,20 @@ export default function Layout(props: ParentProps) {
 }
 
 function NavLink(props: Props) {
-  const href = () => props.href;
+  const getProps = () => props;
+  const { href, label } = getProps();
+
   const pageContext = usePageContext();
   const urlPathname = () => pageContext.urlPathname;
   const isActive = createMemo(() =>
-    href() === '/'
-      ? urlPathname() === href()
-      : urlPathname().startsWith(href()!)
+    href === '/'
+      ? urlPathname() === href
+      : urlPathname().startsWith(href!)
   );
 
   return (
     <a
-      href={href()}
+      href={href}
       id={props.id}
       class={cx(
         props.class ?? [
@@ -52,10 +54,11 @@ function NavLink(props: Props) {
           isActive() ? 'text-primary' : 'text-inactive'
         ]
       )}
+      aria-label={label}
     >
-      {props.label && (
+      {label && (
         <span id='label' class='hidden lg:inline'>
-          {props.label}
+          {label}
         </span>
       )}
       {props.children}
@@ -91,47 +94,51 @@ const NavBar = () => (
       >
         Kris Schneider
       </NavLink>
-      <div id='sections' class='flex items-center gap-7'>
-        <NavLink id='index-route' href='/' label='Home'>
-          <House width={24} height={24} viewBox='0 0 24 24' />
-        </NavLink>
+      <ul id='sections' class='flex items-center gap-7'>
+        <li id='index-route'>
+          <NavLink href='/' label='Home'>
+            <House size={24} viewBox='0 0 24 24' />
+          </NavLink>
+        </li>
 
-        <NavLink id='about-route' href='/#about' label='About'>
-          <Info width={24} height={24} viewBox='0 0 24 24' />
-        </NavLink>
+        <li id='about-route'>
+          <NavLink href='/#about' label='About'>
+            <Info size={24} viewBox='0 0 24 24' />
+          </NavLink>
+        </li>
 
-        <NavLink
-          id='projects-route'
-          href='/projects'
-          label='Projects'
-        >
-          <FolderKanban width={24} height={24} viewBox='0 0 24 24' />
-        </NavLink>
+        <li id='projects-route'>
+          <NavLink href='/projects' label='Projects'>
+            <FolderKanban size={24} viewBox='0 0 24 24' />
+          </NavLink>
+        </li>
 
         {/*
           TODO: Create a HTML variant of the my resume
           that is heavily redacted for privacy.
         */}
-        <NavLink
-          id='resume-route'
-          // href='/resume'
-          label='Resume'
-        >
-          <FileUserIcon width={24} height={24} viewBox='0 0 24 24' />
-        </NavLink>
+        <li id='resume-route'>
+          <NavLink
+            // href='/resume'
+            label='Resume'
+          >
+            <FileUserIcon size={24} viewBox='0 0 24 24' />
+          </NavLink>
+        </li>
 
-        <NavLink
-          id='contact-route'
-          // href='/contact'
-          label='Contact Me'
-        >
-          <CircleUserRound
-            width={24}
-            height={24}
-            viewBox='0 0 24 24'
-          />
-        </NavLink>
-      </div>
+        <li id='contact-route'>
+          <NavLink
+            // href='/contact'
+            label='Contact Me'
+          >
+            <CircleUserRound
+              width={24}
+              height={24}
+              viewBox='0 0 24 24'
+            />
+          </NavLink>
+        </li>
+      </ul>
     </div>
   </nav>
 );
