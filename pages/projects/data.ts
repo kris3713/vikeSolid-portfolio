@@ -10,6 +10,16 @@ type Projects = {
 
 const projects: Projects[] = [
   {
+    id: 'eventli',
+    title: 'Capstone Project: Eventli',
+    desc: `This is a Capstone Project created using TypeScript, Next.js (React), CSS, Tailwind
+CSS, Supabase, and Stripe. Eventli is an event organizer designed to ease the
+process of planning events and booking them. If you are a seller, it also doubles
+as both an event creator, and an advertising platform.`,
+    // link: 'https://evintli.com/', // Site is literally unavailable
+    git_url: 'https://github.com/xkarmanx/eventli'
+  },
+  {
     id: 'dockerproject_cpsy300',
     title: 'DockerProject_CPSY300',
     desc: `This is a project created using CSharp (C#), dotNET,
@@ -20,16 +30,6 @@ accomplished. The project is meant to be an example of how to create a REST
 API that can be used with any API client to request dummy data containing fake
 student names, student IDs, course names, and present dates`,
     git_url: 'https://github.com/kris3713/DockerProject_CPSY300'
-  },
-  {
-    id: 'eventli',
-    title: 'Eventli',
-    desc: `This is a project created using TypeScript, Next.js (React), CSS, Tailwind
-CSS, Supabase, and Stripe. Eventli is an event organizer designed to ease the
-process of planning events and booking them. If you are a seller, it also doubles
-as both an event creator, and an advertising platform.`,
-    link: 'https://evintli.com/',
-    git_url: 'https://github.com/xkarmanx/eventli'
   },
   {
     id: 'fp_spsu23',
