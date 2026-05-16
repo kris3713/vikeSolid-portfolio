@@ -18,8 +18,18 @@ export default function Page() {
       aria-label='Projects Page'
     >
       <h1 id='projects'>Projects</h1>
-      <div class='flex flex-col flex-1 gap-6 min-w-0 w-full'>
-        <div class='grid grid-cols-[repeat(2,1fr)] gap-5'>
+      <div
+        class={cx(
+          'flex flex-row md:flex-col',
+          'flex-1 gap-6 w-full'
+        )}
+      >
+        <div
+          class={cx(
+            'grid gap-5 grid-rows-[repeat(2,1fr)]',
+            'md:grid-cols-[repeat(2,1fr)]'
+          )}
+        >
           <For each={projects}>
             {({ id, title, desc, tech_stacks, link, git_url }) => (
               <div class='project-card' id={id}>

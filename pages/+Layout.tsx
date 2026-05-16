@@ -48,9 +48,9 @@ function NavLink(props: Props) {
       id={props.id}
       class={cx(
         props.class ?? [
-          'flex items-center gap-1.5 text-lg',
-          'max-md:text-[10px] duration-200',
-          'transition-colors hover:text-active',
+          'flex gap-1.5 text-lg max-md:text-[10px]',
+          'duration-200 transition-colors',
+          'hover:text-active',
           isActive() ? 'text-primary' : 'text-inactive'
         ]
       )}
@@ -71,7 +71,7 @@ const NavBar = () => (
     id='navbar'
     class={cx(
       'fixed top-0 inset-x-0 z-50',
-      'py-5 px-10 md:py-3.5 md:px-5'
+      'py-5 px-10 md:py-3.5 max-md:px-2.5'
     )}
     aria-label='Navigation Bar'
   >
@@ -86,7 +86,8 @@ const NavBar = () => (
       <NavLink
         href='/'
         class={cx(
-          'text-xl max-md:text-sm font-bold',
+          'max-sm:hidden inline',
+          'text-xl font-bold',
           'bg-linear-to-r bg-clip-text',
           'text-transparent from-primary',
           'via-[#3860c8] to-[#2a4bb4]'
@@ -94,7 +95,7 @@ const NavBar = () => (
       >
         Kris Schneider
       </NavLink>
-      <ul id='sections' class='flex items-center gap-7'>
+      <ul id='sections' class='flex gap-7 max-sm:m-[2rem_auto]'>
         <li id='index-route'>
           <NavLink href='/' label='Home'>
             <House size={24} viewBox='0 0 24 24' />

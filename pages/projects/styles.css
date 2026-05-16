@@ -30,7 +30,7 @@ h2 {
   transition:
     background 0.2s ease,
     border-color 0.2s ease;
-  @apply max-md:min-h-96 max-sm:min-h-112
+  @apply max-md:min-h-96 max-sm:min-h-112;
 }
 
 .project-card:hover {
