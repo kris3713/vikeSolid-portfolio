@@ -24,7 +24,6 @@ h1 {
 body {
   margin: 0;
   font-family:
-    'Source Sans 3',
     'Source Sans Pro',
     -apple-system,
     Roboto,
@@ -41,7 +40,7 @@ a {
 /*  ============================================================
     Page Transition Animation
     ============================================================ */
-#page-content {
+#page-content { /* TODO: Fix this transition animation. */
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
