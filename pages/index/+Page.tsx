@@ -80,7 +80,11 @@ const highlights = [
 
 export default function Page() {
   return (
-    <div class='flex flex-col'>
+    <div
+      id='index-page'
+      class='flex flex-col'
+      aria-label='Index Page'
+    >
       {/* Hero Section */}
       <section
         id='hero-section'
@@ -88,6 +92,7 @@ export default function Page() {
           'flex items-center relative overflow-hidden',
           'min-h-(--min-height) p-(--padding)'
         )}
+        aria-label='Hero Section'
       >
         <div
           id='fancy-pattern'
@@ -95,6 +100,7 @@ export default function Page() {
             'absolute left-9 top-1/2 -translate-y-1/2',
             'w-175 h-175 pointer-events-none hero-background'
           )}
+          aria-label='Fancy Pattern'
         />
 
         <div
@@ -104,8 +110,12 @@ export default function Page() {
             'gap-10'
           )}
         >
-          <div class='flex flex-1 flex-col gap-7 min-w-0'>
-            <div class='text-2xl leading-tight text-white'>
+          <div id='info' class='flex flex-1 flex-col gap-7 min-w-0'>
+            <div
+              id='introduction'
+              class='text-2xl leading-tight text-white'
+              aria-label='Introduction'
+            >
               <span class='text-white/60 font-normal'>Hi, I'm</span>
               <span class='block text-white font-bold'>
                 Kris Schneider
@@ -113,12 +123,14 @@ export default function Page() {
             </div>
 
             <div
+              id='profession'
               class={cx(
                 'from-[#2a4bb4] via-primary to-[#2a4bb4]',
                 'bg-clip-text text-transparent leading-tight',
                 'text-[clamp(36px,4vw,56px)] font-bold',
                 'bg-linear-to-r whitespace-pre-line'
               )}
+              aria-label='Profession'
             >
               {`Software
               Developer/Engineer`}
@@ -177,6 +189,7 @@ export default function Page() {
               'shrink-0 w-full md:w-[38%] xl:w-[42%]',
               'max-w-[320px] md:max-w-230 flex justify-center'
             )}
+            aria-label='Profile'
           >
             <img
               class='w-full aspect-square rounded-full object-cover'
@@ -227,7 +240,11 @@ export default function Page() {
               </For>
             </article>
 
-            <ul class='flex flex-col gap-3'>
+            <ul
+              id='highlights'
+              class='flex flex-col gap-3'
+              aria-label='Highlights'
+            >
               <For each={highlights}>
                 {highlight => (
                   <li
@@ -287,10 +304,12 @@ export default function Page() {
               </For>
             </div>
 
-            <div class='stats-row'>
+            <div id='stats' class='stats-row'>
               <div class='stat-item'>
                 <span class='stat-number'>5+</span>
-                <span class='stat-label'>Years of Experience</span>
+                <span class='stat-label'>
+                  Years of Software Developer Experience
+                </span>
               </div>
               {/* <div class='stat-divider' /> */}
 
