@@ -1,6 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
+  --default-font-family: 'Source Sans Pro', var(--font-sans);
   --color-primary: #4574dc;
   --color-inactive: #7f7f7f;
   --color-active: #ccc;
