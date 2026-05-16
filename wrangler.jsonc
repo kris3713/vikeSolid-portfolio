@@ -1,0 +1,10 @@
+{
+  // "$schema": "https://www.unpkg.com/wrangler/config-schema.json",
+  "name": "kris-schneider",
+  "compatibility_date": "2026-05-16",
+  "pages_build_output_dir": "./dist/client",
+  "vars": {
+    "BUN_VERSION": "latest",
+    "NODE_VERSION": "latest"
+  }
+}

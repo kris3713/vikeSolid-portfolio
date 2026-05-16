@@ -1,7 +1,0 @@
-#:schema https://www.unpkg.com/wrangler/config-schema.json
-
-pages_build_output_dir = "./dist/client"
-
-[vars]
-BUN_VERSION = "latest"
-NODE_VERSION = "latest"
