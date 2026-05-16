@@ -5,7 +5,7 @@
 - Use **Bun** for all commands; scripts are `bun --bun <command>`.
 - `bun --bun vike dev` – starts dev server with hot reload.
 - `bun --bun vike build` – builds production assets.
-- `bun --bun vike build && vike preview` – builds then serves preview.
+- `bun --bun vike build && bun --bun vike preview` – builds then serves preview.
 
 ## Linting & Formatting
 
@@ -24,6 +24,10 @@
 - **Layout**: `+Layout.tsx` (root `pages`) wraps pages; components can be reused via `+Layout`.
 - **Entry point**: `/pages/index/+Page.tsx` renders the home page.
 - All components are SolidJS JSX (`.tsx`) files.
+
+## Design Guidelines
+
+- Refer to `DESIGN.md` for styling and design principles.
 
 ## Dependencies & Tooling
 
