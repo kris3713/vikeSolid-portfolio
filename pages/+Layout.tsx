@@ -132,8 +132,7 @@ const NavBar = () => (
             label='Contact Me'
           >
             <CircleUserRound
-              width={24}
-              height={24}
+              size={24}
               viewBox='0 0 24 24'
             />
           </NavLink>
