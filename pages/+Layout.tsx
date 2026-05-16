@@ -108,6 +108,10 @@ const NavBar = () => (
           <FolderKanban width={24} height={24} viewBox='0 0 24 24' />
         </NavLink>
 
+        {/*
+          TODO: Create a HTML variant of the my resume
+          that is heavily redacted for privacy.
+        */}
         <NavLink
           id='resume-route'
           // href='/resume'
