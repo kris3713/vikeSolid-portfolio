@@ -26,7 +26,8 @@ export default function Page() {
                   id='project-desc'
                   class={cx(
                     'text-(size:--desc-size) text-active',
-                    'transition-colors leading-relaxed'
+                    'transition-colors leading-relaxed',
+                    'text-wrap text-clip overflow-hidden'
                   )}
                 >
                   {desc}
