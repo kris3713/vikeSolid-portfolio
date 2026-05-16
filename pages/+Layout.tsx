@@ -131,10 +131,7 @@ const NavBar = () => (
             // href='/contact'
             label='Contact Me'
           >
-            <CircleUserRound
-              size={24}
-              viewBox='0 0 24 24'
-            />
+            <CircleUserRound size={24} viewBox='0 0 24 24' />
           </NavLink>
         </li>
       </ul>
