@@ -1,0 +1,5 @@
+#:schema https://www.unpkg.com/wrangler/config-schema.json
+
+[vars]
+BUN_VERSION = "latest"
+NODE_VERSION = "latest"
