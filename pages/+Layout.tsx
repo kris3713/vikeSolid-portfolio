@@ -47,14 +47,14 @@ function NavLink(props: Props) {
       class={cx(
         props.class ?? [
           'flex items-center gap-1.5 text-lg',
-          'duration-200 transition-colors',
-          'hover:text-active',
+          'max-md:text-[10px] duration-200',
+          'transition-colors hover:text-active',
           isActive() ? 'text-primary' : 'text-inactive'
         ]
       )}
     >
       {props.label && (
-        <span id='label' class='hidden sm:inline'>
+        <span id='label' class='hidden lg:inline'>
           {props.label}
         </span>
       )}
@@ -75,7 +75,7 @@ const NavBar = () => (
     <div
       class={cx(
         'flex items-center justify-between py-0 px-9 h-16',
-        'md:h-14 backdrop-blur-[25px] bg-surface/80',
+        'max-md:h-14 backdrop-blur-[25px] bg-surface/80',
         'border border-border rounded-full',
         'shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]'
       )}
@@ -83,7 +83,7 @@ const NavBar = () => (
       <NavLink
         href='/'
         class={cx(
-          'text-xl md:text-base font-bold',
+          'text-xl max-md:text-sm font-bold',
           'bg-linear-to-r bg-clip-text',
           'text-transparent from-primary',
           'via-[#3860c8] to-[#2a4bb4]'
