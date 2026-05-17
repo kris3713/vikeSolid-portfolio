@@ -1,23 +1,30 @@
 import { CheckCircle2 } from 'lucide-solid';
-import { For } from 'solid-js';
+import { For, type JSX } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 
-import './styles.css';
 import GitHub from '../../assets/github.svg';
 import LinkedIn from '../../assets/icons8-linkedin-30.svg';
-import { paragraphs, skills, highlights } from './data';
+import { highlights, paragraphs, skills } from './data';
+
+import './styles.css';
+
+const Section = (props: JSX.HTMLAttributes<HTMLElement>) => (
+  <section
+    id={props.id}
+    class={cx(
+      'flex items-center relative overflow-hidden',
+      'min-h-(--min-height) p-(--padding)'
+    )}
+    aria-label={props['aria-label']}
+  >
+    {props.children}
+  </section>
+);
 
 const Page = () => (
   <div id='index-page' class='flex flex-col' aria-label='Index Page'>
     {/* Hero Section */}
-    <section
-      id='hero-section'
-      class={cx(
-        'flex items-center relative overflow-hidden',
-        'min-h-(--min-height) p-(--padding)'
-      )}
-      aria-label='Hero Section'
-    >
+    <Section id='hero-section' aria-label='Hero Section'>
       <div
         id='fancy-pattern'
         class={cx(
@@ -128,17 +135,10 @@ const Page = () => (
           />
         </div>
       </div>
-    </section>
+    </Section>
 
     {/* About Section */}
-    <section
-      id='about-section'
-      class={cx(
-        'flex items-center relative overflow-hidden',
-        'min-h-(--min-height) p-(--padding)'
-      )}
-      aria-label='About Section'
-    >
+    <Section id='about-section' aria-label='About Section'>
       <div
         id='info-columns'
         class={cx(
@@ -267,7 +267,7 @@ const Page = () => (
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   </div>
 );
 
