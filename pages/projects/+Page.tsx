@@ -17,8 +17,13 @@ const Page = () => (
     aria-label='Projects Page'
   >
     <h1 id='projects'>Projects</h1>
-    <div class='flex flex-row md:flex-col flex-1 gap-6 w-full'>
+    <div
+      id='projects-list'
+      class='flex flex-row md:flex-col flex-1 gap-6 w-full'
+      aria-label='Projects List'
+    >
       <div
+        id='projects-grid'
         class={cx(
           'grid gap-5 grid-rows-[repeat(2,1fr)]',
           'md:grid-cols-[repeat(2,1fr)]'
@@ -26,7 +31,7 @@ const Page = () => (
       >
         <For each={projects}>
           {({ id, title, desc, tech_stacks, link, git_url }) => (
-            <div class='project-card' id={id}>
+            <article id={id} class='project-card' aria-label={title}>
               <h2 id='project-title'>{title}</h2>
               <p id='project-desc'>{desc}</p>
 
@@ -80,7 +85,7 @@ const Page = () => (
                   <img width={24} height={24} src={GitHub} />
                 </a>
               </div>
-            </div>
+            </article>
           )}
         </For>
       </div>
