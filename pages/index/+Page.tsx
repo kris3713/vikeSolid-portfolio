@@ -28,11 +28,13 @@ const Page = () => (
       />
 
       <div
+        id='info-and-occupation'
         class={cx(
           'flex flex-col-reverse md:flex-row',
           'items-center justify-between w-full',
           'gap-10'
         )}
+        aria-label='Info and Occupation'
       >
         <div id='info' class='flex flex-1 flex-col gap-7 min-w-0'>
           <div
@@ -47,20 +49,24 @@ const Page = () => (
           </div>
 
           <div
-            id='profession'
+            id='occupation'
             class={cx(
               'from-[#2a4bb4] via-primary to-[#2a4bb4]',
               'bg-clip-text text-transparent leading-tight',
               'text-[clamp(36px,4vw,56px)] font-bold',
               'bg-linear-to-r whitespace-pre-line'
             )}
-            aria-label='Profession'
+            aria-label='Occupation'
           >
             {`Software
               Developer/Engineer`}
           </div>
 
-          <div id='links' class='flex items-center gap-4.5'>
+          <div
+            id='links'
+            class='flex items-center gap-4.5'
+            aria-label='Links'
+          >
             <a
               id='github'
               href='https://github.com/kris3713'
@@ -131,15 +137,22 @@ const Page = () => (
         'flex items-center relative overflow-hidden',
         'min-h-(--min-height) p-(--padding)'
       )}
+      aria-label='About Section'
     >
       <div
+        id='info-columns'
         class={cx(
           'flex flex-col lg:flex-row items-start',
           'justify-between w-full gap-14'
         )}
+        aria-label='Info Columns'
       >
         {/* Left column - bio */}
-        <div id='bio' class='flex-1 flex flex-col gap-8 min-w-0'>
+        <div
+          id='bio'
+          class='flex-1 flex flex-col gap-8 min-w-0'
+          aria-label='Bio'
+        >
           <div class='flex flex-col gap-3'>
             <span
               class={cx(
@@ -158,6 +171,7 @@ const Page = () => (
               'flex flex-col gap-4 text-white/70',
               'text-(size:--text-size) leading-relaxed'
             )}
+            aria-label='About Body'
           >
             <For each={paragraphs}>
               {paragraph => <p>{paragraph}</p>}
@@ -202,8 +216,13 @@ const Page = () => (
         </div>
 
         {/* Right column - skills */}
-        <div class='flex flex-col flex-1 gap-6 min-w-0 w-full'>
+        <div
+          id='skills'
+          class='flex flex-col flex-1 gap-6 min-w-0 w-full'
+          aria-label='Skills'
+        >
           <div
+            id='skills-grid'
             class={cx(
               'grid grid-cols-[repeat(2,1fr)]',
               'max-sm:grid-cols-[1fr] gap-3'
@@ -226,7 +245,7 @@ const Page = () => (
             </For>
           </div>
 
-          <div id='stats' class='stats-row'>
+          <div id='stats' class='stats-row' aria-label='Stats'>
             <div class='stat-item'>
               <span class='stat-number'>5+</span>
               <span class='stat-label'>
