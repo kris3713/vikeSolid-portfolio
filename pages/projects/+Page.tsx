@@ -3,8 +3,8 @@ import { ExternalLink } from 'lucide-solid';
 import { For } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 
-import GitHub from '../../assets/github.svg';
 import projects from './data';
+import { GitHub } from '../../components/CustomIcons';
 
 const Page = () => (
   <div
@@ -77,13 +77,7 @@ const Page = () => (
                     <ExternalLink size={24} viewBox='0 0 24 24' />
                   </a>
                 )}
-                <a
-                  href={git_url}
-                  target='_blank'
-                  aria-label='Git Repository'
-                >
-                  <img width={24} height={24} src={GitHub} />
-                </a>
+                <GitHub href={git_url} aria-label='Git Repository' />
               </div>
             </article>
           )}

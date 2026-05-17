@@ -2,8 +2,7 @@ import { CheckCircle2 } from 'lucide-solid';
 import { For, type JSX } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 
-import GitHub from '../../assets/github.svg';
-import LinkedIn from '../../assets/icons8-linkedin-30.svg';
+import { GitHub, LinkedIn } from '../../components/CustomIcons';
 import { highlights, paragraphs, skills } from './data';
 
 import './styles.css';
@@ -74,24 +73,8 @@ const Page = () => (
             class='flex items-center gap-4.5'
             aria-label='Links'
           >
-            <a
-              id='github'
-              href='https://github.com/kris3713'
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label='GitHub'
-            >
-              <img width={24} height={24} src={GitHub} />
-            </a>
-            <a
-              id='linkedin'
-              href='https://www.linkedin.com/in/kris-schneider-b6715b230/'
-              target='_blank'
-              rel='noopener noreferrer'
-              aria-label='LinkedIn'
-            >
-              <img width={30} height={30} src={LinkedIn} />
-            </a>
+            <GitHub href='https://github.com/kris3713' />
+            <LinkedIn />
           </div>
 
           <div class='flex items-center gap-5'>
