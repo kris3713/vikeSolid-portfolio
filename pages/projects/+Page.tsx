@@ -85,24 +85,6 @@ const Page = () => (
         </For>
       </div>
     </div>
-    {/* <div */}
-    {/*   class={cx( */}
-    {/*     'flex items-center relative overflow-hidden', */}
-    {/*     'min-h-(--min-height) p-(--padding)' */}
-    {/*   )} */}
-    {/* > */}
-    {/*   <div */}
-    {/*     class={cx( */}
-    {/*       'flex flex-row items-start', */}
-    {/*       'justify-between w-full gap-14' */}
-    {/*     )} */}
-    {/*   > */}
-    {/*     <div class='flex-1 flex flex-col gap-8 min-w-0'> */}
-    {/*       <div class='flex flex-col gap-3'> */}
-    {/*       </div> */}
-    {/*     </div> */}
-    {/*   </div> */}
-    {/* </div> */}
   </div>
 );
 
