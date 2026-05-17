@@ -85,7 +85,6 @@ const Page = () => (
               id='linkedin'
               href='https://www.linkedin.com/in/kris-schneider-b6715b230/'
               target='_blank'
-              rel='noopener noreferrer'
               aria-label='LinkedIn'
             >
               <LinkedIn />
