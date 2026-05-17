@@ -10,7 +10,7 @@ const Footer = () => (
       id='copyright_notice'
       class={cx(
         'container m-[2rem_auto] px-4',
-        'text-center text-active',
+        'text-center text-inactive',
         'leading-relaxed'
       )}
       aria-label='Copyright Notice'
