@@ -1,4 +1,4 @@
-import './styles.css'
+import './styles.css';
 import { Show } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 import { usePageContext } from 'vike-solid/usePageContext';

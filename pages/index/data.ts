@@ -70,4 +70,4 @@ const highlights = [
   'Always wanting to learn new technologies'
 ];
 
-export { paragraphs, skills, highlights }
+export { paragraphs, skills, highlights };

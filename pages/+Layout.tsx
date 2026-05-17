@@ -5,7 +5,6 @@ import type { ParentProps } from 'solid-js';
 
 import './Layout.css';
 import './tailwind.css';
-
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 

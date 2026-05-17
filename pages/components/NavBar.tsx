@@ -105,19 +105,13 @@ const NavBar = () => (
           that is heavily redacted for privacy.
         */}
         <li id='resume-route'>
-          <NavLink
-            href='/resume'
-            label='Resume'
-          >
+          <NavLink href='/resume' label='Resume'>
             <FileUser size={24} viewBox='0 0 24 24' />
           </NavLink>
         </li>
 
         <li id='contact-route'>
-          <NavLink
-            href='/contact'
-            label='Contact Me'
-          >
+          <NavLink href='/contact' label='Contact Me'>
             <CircleUserRound size={24} viewBox='0 0 24 24' />
           </NavLink>
         </li>
