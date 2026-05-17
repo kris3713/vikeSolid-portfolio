@@ -12,8 +12,8 @@ import NavBar from './components/NavBar';
 const Layout = (props: ParentProps) => (
   <div id='layout' class='min-h-screen bg-bg'>
     <NavBar />
-    <main class='pt-26 md:pt-21'>
-      <div id='page-content'>{props.children}</div>
+    <main id='page-content' class='pt-26 md:pt-21'>
+      {props.children}
     </main>
     <Footer />
   </div>
