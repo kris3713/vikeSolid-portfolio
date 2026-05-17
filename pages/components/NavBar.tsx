@@ -1,6 +1,6 @@
 import {
   CircleUserRound,
-  FileUserIcon,
+  FileUser,
   FolderKanban,
   House,
   Info
@@ -106,16 +106,16 @@ const NavBar = () => (
         */}
         <li id='resume-route'>
           <NavLink
-            // href='/resume'
+            href='/resume'
             label='Resume'
           >
-            <FileUserIcon size={24} viewBox='0 0 24 24' />
+            <FileUser size={24} viewBox='0 0 24 24' />
           </NavLink>
         </li>
 
         <li id='contact-route'>
           <NavLink
-            // href='/contact'
+            href='/contact'
             label='Contact Me'
           >
             <CircleUserRound size={24} viewBox='0 0 24 24' />
