@@ -8,7 +8,7 @@ export default function Page() {
   const is404 = () => pageContext.is404;
 
   return (
-    <div
+    <article
       id='error-page'
       class={cx(
         'flex flex-col relative gap-14',
@@ -28,6 +28,6 @@ export default function Page() {
         <h1 id='error'>Page Not Found</h1>
         <p id='error-message'>This page could not be found.</p>
       </Show>
-    </div>
+    </article>
   );
 }
