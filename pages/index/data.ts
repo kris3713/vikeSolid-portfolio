@@ -25,7 +25,7 @@ export const skills: Skills[] = [
   {
     icon: Terminal,
     label: 'Backend Dev',
-    desc: `Node.js/Bun (JavaScript/TypeScript), Go, Python, C#,`
+    desc: `Node.js/Bun (JavaScript/TypeScript), Go, Python, C#`
   },
   {
     icon: Database,
