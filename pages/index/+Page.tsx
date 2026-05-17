@@ -3,7 +3,6 @@ import { For } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 
 import './styles.css';
-
 import GitHub from '../../assets/github.svg';
 import LinkedIn from '../../assets/icons8-linkedin-30.svg';
 import { paragraphs, skills } from './data';

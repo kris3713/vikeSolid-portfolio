@@ -18,12 +18,7 @@ export default function Page() {
       aria-label='Projects Page'
     >
       <h1 id='projects'>Projects</h1>
-      <div
-        class={cx(
-          'flex flex-row md:flex-col',
-          'flex-1 gap-6 w-full'
-        )}
-      >
+      <div class='flex flex-row md:flex-col flex-1 gap-6 w-full'>
         <div
           class={cx(
             'grid gap-5 grid-rows-[repeat(2,1fr)]',

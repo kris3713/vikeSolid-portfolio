@@ -34,7 +34,8 @@ a {
 /*  ============================================================
     Page Transition Animation
     ============================================================ */
-#page-content { /* TODO: Fix this transition animation. */
+#page-content {
+  /* TODO: Fix this transition animation. */
   opacity: 1;
   transition: opacity 0.3s ease-in-out;
 }
