@@ -61,7 +61,7 @@ const NavBar = () => (
     )}
     aria-label='Navigation Bar'
   >
-    <div
+    <section
       class={cx(
         'flex items-center justify-between py-0 px-9 h-16',
         'max-md:h-14 backdrop-blur-[25px] bg-surface/80',
@@ -116,7 +116,7 @@ const NavBar = () => (
           </NavLink>
         </li>
       </ul>
-    </div>
+    </section>
   </nav>
 );
 
