@@ -43,7 +43,9 @@ export default function Page() {
                   <For each={tech_stacks}>
                     {tech_stack => (
                       <li
-                        id={tech_stack.replace(' ', '_')}
+                        id={tech_stack
+                          .replace(' ', '_')
+                          .toLowerCase()}
                         class={cx(
                           'text-primary bg-primary/11',
                           'rounded-md px-2 py-1'
