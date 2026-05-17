@@ -16,7 +16,7 @@ type Skills = {
 };
 
 // TODO: Correct all these skills to be more accurate
-export const skills: Skills[] = [
+const skills: Skills[] = [
   {
     icon: Code2,
     label: 'Frontend Dev',
@@ -49,7 +49,7 @@ export const skills: Skills[] = [
   }
 ];
 
-export const paragraphs = [
+const paragraphs = [
   `I'm a Software Developer and Engineer with a passion for
   building elegant, high-performance web applications. With
   years of hands-on experience across the full stack, I
@@ -61,3 +61,13 @@ export const paragraphs = [
   open-source contributor and enjoy exploring the latest
   trends in web performance and developer tooling.`
 ];
+
+// TODO: Change highlights to be more accurate
+const highlights = [
+  'Passionate about clean, performant code',
+  'Strong focus on developer experience',
+  // 'Experienced in agile team environments',
+  'Always wanting to learn new technologies'
+];
+
+export { paragraphs, skills, highlights }

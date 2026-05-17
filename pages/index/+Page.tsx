@@ -5,15 +5,7 @@ import { cx } from 'tailwind-variants/lite';
 import './styles.css';
 import GitHub from '../../assets/github.svg';
 import LinkedIn from '../../assets/icons8-linkedin-30.svg';
-import { paragraphs, skills } from './data';
-
-// TODO: Change highlights to be more accurate
-const highlights = [
-  'Passionate about clean, performant code',
-  'Strong focus on developer experience',
-  // 'Experienced in agile team environments',
-  'Always wanting to learn new technologies'
-];
+import { paragraphs, skills, highlights } from './data';
 
 const Page = () => (
   <div id='index-page' class='flex flex-col' aria-label='Index Page'>
