@@ -77,7 +77,13 @@ const Page = () => (
                     <ExternalLink size={24} viewBox='0 0 24 24' />
                   </a>
                 )}
-                <GitHub href={git_url} aria-label='Git Repository' />
+                <a
+                  href={git_url}
+                  target='_blank'
+                  aria-label='Git Repository'
+                >
+                  <GitHub />
+                </a>
               </div>
             </article>
           )}

@@ -73,8 +73,23 @@ const Page = () => (
             class='flex items-center gap-4.5'
             aria-label='Links'
           >
-            <GitHub href='https://github.com/kris3713' />
-            <LinkedIn />
+            <a
+              id='github'
+              href='https://github.com/kris3713'
+              target='_blank'
+              aria-label='GitHub'
+            >
+              <GitHub />
+            </a>
+            <a
+              id='linkedin'
+              href='https://www.linkedin.com/in/kris-schneider-b6715b230/'
+              target='_blank'
+              rel='noopener noreferrer'
+              aria-label='LinkedIn'
+            >
+              <LinkedIn />
+            </a>
           </div>
 
           <div class='flex items-center gap-5'>
