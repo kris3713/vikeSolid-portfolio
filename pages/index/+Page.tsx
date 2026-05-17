@@ -44,7 +44,7 @@ const Page = () => (
         aria-label='Info and Occupation'
       >
         <div id='info' class='flex flex-1 flex-col gap-7 min-w-0'>
-          <div
+          <p
             id='introduction'
             class='text-2xl leading-tight text-white'
             aria-label='Introduction'
@@ -53,9 +53,9 @@ const Page = () => (
             <span class='block text-white font-bold'>
               Kris Schneider
             </span>
-          </div>
+          </p>
 
-          <div
+          <p
             id='occupation'
             class={cx(
               'from-[#2a4bb4] via-primary to-[#2a4bb4]',
@@ -67,7 +67,7 @@ const Page = () => (
           >
             {`Software
               Developer/Engineer`}
-          </div>
+          </p>
 
           <div
             id='links'
