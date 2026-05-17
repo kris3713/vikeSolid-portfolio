@@ -4,6 +4,7 @@
   "pages_build_output_dir": "./dist/client",
   "vars": {
     "BUN_VERSION": "1.3.14",
-    "NODE_VERSION": "latest"
+    "NODE_VERSION": "latest",
+    "NODE_ENV": "production"
   }
 }
