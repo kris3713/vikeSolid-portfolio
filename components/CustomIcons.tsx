@@ -1,15 +1,15 @@
-import LinkedIn_Icon from '../assets/icons8-linkedin-30.svg';
-import GitHub_Icon from './../assets/github.svg';
+import { SiGithub } from 'solid-icons/si';
+import { BsLinkedin } from 'solid-icons/bs';
 
 const GitHub = () => (
   <>
-    <img width={24} height={24} src={GitHub_Icon} />
+    <SiGithub size={24} viewBox='0 0 24 24' />
   </>
 );
 
 const LinkedIn = () => (
   <>
-    <img width={30} height={30} src={LinkedIn_Icon} />
+    <BsLinkedin size={24} viewBox='0 0 15 15' />
   </>
 );
 
