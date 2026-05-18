@@ -2,10 +2,10 @@ import { CheckCircle2 } from 'lucide-solid';
 import { For, type JSX } from 'solid-js';
 import { cx } from 'tailwind-variants/lite';
 
-import { GitHub, LinkedIn } from '../../components/CustomIcons';
 import { highlights, paragraphs, skills } from './data';
 
 import './styles.css';
+import { GitHub, LinkedIn } from '../../components/CustomIcons';
 
 const Section = (props: JSX.HTMLAttributes<HTMLElement>) => (
   <section
